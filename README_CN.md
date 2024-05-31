@@ -23,6 +23,100 @@ ChatTTS是一个强大的文本转语音系统。然而，负责任地和符合�
 ---
 ## 用法
 
+要在 conda 环境中安装这些库，你可以创建一个新的环境并使用 **`conda`** 和 **`pip`** 来安装所需的库。下面是一个详细的步骤指南：
+
+### **1. 创建一个新的 conda 环境**
+
+```bash
+bashCopy code
+conda create -n myenv python=3.8
+
+```
+
+将 **`myenv`** 替换为你想要的新环境名称。
+
+### **2. 激活新创建的环境**
+
+```bash
+bashCopy code
+conda activate myenv
+
+```
+
+### **3. 安装 conda 包**
+
+使用 conda 安装 **`torch`** 和 **`tqdm`**：
+
+```bash
+bashCopy code
+conda install pytorch==2.0 -c pytorch
+conda install tqdm
+
+```
+
+### **4. 安装其他库**
+
+有些库可能不在 conda 的默认渠道中，所以我们使用 pip 来安装它们。
+
+```bash
+bashCopy code
+pip install omegaconf==2.3.0
+pip install einops
+pip install vector_quantize_pytorch
+pip install transformers==4.41.1
+pip install vocos
+
+```
+
+### **完整安装命令**
+
+把这些步骤放在一起，完整的安装命令如下：
+
+```bash
+bashCopy code
+# 创建并激活新环境
+conda create -n myenv python=3.8 -y
+conda activate myenv
+
+# 安装 conda 包
+conda install pytorch==2.0 -c pytorch -y
+conda install tqdm -y
+
+# 安装 pip 包
+pip install omegaconf==2.3.0
+pip install einops
+pip install vector_quantize_pytorch
+pip install transformers==4.41.1
+pip install vocos
+
+```
+
+### **检查安装**
+
+为了确保所有库安装正确，可以运行以下命令检查每个库的版本：
+
+```python
+pythonCopy code
+import omegaconf
+import torch
+import tqdm
+import einops
+import vector_quantize_pytorch
+import transformers
+import vocos
+
+print(f"omegaconf: {omegaconf.__version__}")
+print(f"torch: {torch.__version__}")
+print(f"tqdm: {tqdm.__version__}")
+print(f"einops: {einops.__version__}")
+print(f"vector_quantize_pytorch: {vector_quantize_pytorch.__version__}")
+print(f"transformers: {transformers.__version__}")
+print(f"vocos: {vocos.__version__}")
+
+```
+
+这样，你的 conda 环境就会安装好所有需要的库并且可以正常使用。
+
 <h4>基本用法</h4>
 
 ```python
